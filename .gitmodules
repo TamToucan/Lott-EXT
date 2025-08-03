@@ -1,0 +1,12 @@
+[submodule "GDCave-EXT"]
+	path = GDCave-EXT
+	url = https://github.com/TamToucan/GDCave-EXT
+[submodule "GDMaze-EXT"]
+	path = GDMaze-EXT
+	url = https://github.com/TamToucan/GDMaze-EXT
+[submodule "GDDistanceMap-EXT"]
+	path = GDDistanceMap-EXT
+	url = https://github.com/TamToucan/GDDistanceMap-EXT.git
+[submodule "GDTracker-EXT"]
+	path = GDTracker-EXT
+	url = https://github.com/TamToucan/GDTracker-EXT.git
