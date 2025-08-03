@@ -10,3 +10,6 @@
 [submodule "GDTracker-EXT"]
 	path = GDTracker-EXT
 	url = https://github.com/TamToucan/GDTracker-EXT.git
+[submodule "Libs"]
+	path = Libs
+	url = https://github.com/TamToucan/Libs
