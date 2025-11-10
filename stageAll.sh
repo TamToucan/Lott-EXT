@@ -2,10 +2,9 @@
 for dir in GDCave-EXT GDDistanceMap-EXT GDMaze-EXT GDTracker-EXT Libs
 do
    cd $dir
-   git checkout main
+   git add -u
+   echo "DIR $dir"
+   git status
    cd ..
 done
-git add -u
-git commit -m"Update to main"
-git push
 
