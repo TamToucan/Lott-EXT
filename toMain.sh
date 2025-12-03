@@ -1,5 +1,5 @@
 #!/bin/bash
-for dir in GDCave-EXT GDDistanceMap-EXT GDMaze-EXT GDTracker-EXT Libs
+for dir in Cave-LIB DistanceMap-LIB Maze-LIB Tracker-LIB Libs
 do
    cd $dir
    git checkout main

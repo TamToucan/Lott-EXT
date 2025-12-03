@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(Lott-EXT)
+project(Lott-LIBS)
 set(ALL_SUBS_BUILD_ON ON)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -25,9 +25,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(GDExtension Libs)
 
 # Then add submodules — they will NOT fetch Libs due to ALL_SUBS_BUILD_ON
-add_subdirectory(GDTracker-EXT)
-add_subdirectory(GDMaze-EXT)
-add_subdirectory(GDCave-EXT)
-add_subdirectory(GDDistanceMap-EXT)
+add_subdirectory(Tracker-LIB)
+add_subdirectory(Maze-LIB)
+add_subdirectory(Cave-LIB)
+add_subdirectory(DistanceMap-LIB)
 
 

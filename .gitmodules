@@ -1,13 +1,13 @@
-[submodule "GDCave-EXT"]
+[submodule "Cave-LIB"]
 	path = Cave-LIB
 	url = https://github.com/TamToucan/Cave-LIB.git
-[submodule "GDMaze-EXT"]
+[submodule "Maze-LIB"]
 	path = Maze-LIB
 	url = https://github.com/TamToucan/Maze-LIB.git
-[submodule "GDDistanceMap-EXT"]
+[submodule "DistanceMap-LIB"]
 	path = DistanceMap-LIB
 	url = https://github.com/TamToucan/DistanceMap-LIB.git
-[submodule "GDTracker-EXT"]
+[submodule "Tracker-LIB"]
 	path = Tracker-LIB
 	url = https://github.com/TamToucan/Tracker-LIB.git
 [submodule "Libs"]
