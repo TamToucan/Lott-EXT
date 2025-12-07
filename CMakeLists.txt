@@ -30,4 +30,6 @@ add_subdirectory(Maze-LIB)
 add_subdirectory(Cave-LIB)
 add_subdirectory(DistanceMap-LIB)
 
+add_subdirectory(test)
+
 
