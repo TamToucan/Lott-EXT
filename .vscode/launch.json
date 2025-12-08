@@ -6,13 +6,12 @@
     "configurations": [
         {
             "name": "Debug LottLibsTest",
-            "type": "gdb",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/test/LottLibsTest.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build/test",
-            "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "d:/Tools/MinGW/bin/gdb.exe",
