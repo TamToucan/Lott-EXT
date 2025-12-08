@@ -9,19 +9,13 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/test/LottLibsTest.exe",
-            "args": [],
-            "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build/test",
-            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "d:/Tools/MinGW/bin/gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
+            "miDebuggerPath": "D:/Tools/MinGW/bin/gdb.exe",
+            "sourceFileMap": {
+                "D:/git/Lott-Libs": "${workspaceFolder}",
+                "d:/git/Lott-Libs": "${workspaceFolder}"
+            },
             "preLaunchTask": "Build LottLibsTest"
         }
     ]
