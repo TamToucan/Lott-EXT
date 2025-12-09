@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
 project(Lott-LIBS)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(ALL_SUBS_BUILD_ON ON)
 
 if(NOT CMAKE_BUILD_TYPE)
