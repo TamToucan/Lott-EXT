@@ -7,8 +7,10 @@
 #include <iostream>
 #include <vector>
 
-std::pair<float, float> computeDirection(float angle) {
-  return {std::cos(angle), std::sin(angle)};
+std::pair<float, float> computeDirection(float angleDeg) {
+  const double MYPI = 3.14159265358979323846;
+  double radians = angleDeg * (MYPI / 180.0);
+  return {std::cos(radians), std::sin(radians)};
 }
 
 Cave::TileMap makeCave() {
@@ -77,12 +79,11 @@ int main() {
 
   DistanceMap::Routing::NavigationGraph navGraph;
   navGraph.initialize(graph, info);
-
   DistanceMap::GridType::Vec2 from(300, 250);
-  DistanceMap::GridType::Vec2 to(1830, 986);
+  DistanceMap::GridType::Vec2 to(1950, 1086);
   DistanceMap::Router::RouteCtx *ctx = new DistanceMap::Router::RouteCtx();
   ctx->type = -1;
-  int count = 1000;
+  int count = 2000;
   int mv = 1;
   bool reached_target = false;
   DistanceMap::GridType::Point toPnt = {(int)(to.x / (info.mCellWidth * 8)),
@@ -94,13 +95,15 @@ int main() {
         (int)(from.y / (info.mCellHeight * 8))};
     reached_target =
         (fromPnt.first == toPnt.first && fromPnt.second == toPnt.second);
-    if (prevPnt != fromPnt) {
-      if (pathGrid[fromPnt.second][fromPnt.first] == 'x') {
-        std::cerr << "ERROR: LOOPED BACK TO " << fromPnt.first << ","
-                  << fromPnt.second << std::endl;
-        break;
-      }
-    }
+    /*
+if (prevPnt != fromPnt) {
+  if (pathGrid[fromPnt.second][fromPnt.first] == 'x') {
+    std::cerr << "ERROR: LOOPED BACK TO " << fromPnt.first << ","
+              << fromPnt.second << std::endl;
+    break;
+  }
+}
+*/
     prevPnt = fromPnt;
     if (pathGrid[fromPnt.second][fromPnt.first] == 0) {
       std::cerr << "ERROR: WALL " << fromPnt.first << "," << fromPnt.second
@@ -113,8 +116,8 @@ int main() {
 
     float ang = navGraph.getMoveDirection(ctx, from, to, 0);
     std::pair<float, float> mv = computeDirection(ang);
-    from.x += mv.first * 23;
-    from.y += mv.second * 23;
+    from.x += mv.first * 13;
+    from.y += mv.second * 13;
     DistanceMap::GridType::Point nw = {(int)(from.x / (info.mCellWidth * 8)),
                                        (int)(from.y / (info.mCellHeight * 8))};
     std::cerr << "CTV MV " << mv.first << "," << mv.second << "  ang " << ang
@@ -127,7 +130,9 @@ int main() {
   for (int row = 0; row < pathGrid.size(); ++row) {
     for (int col = 0; col < pathGrid[0].size(); ++col) {
       int v = pathGrid[row][col];
-      if (v == 0) {
+      if (toPnt.first == col && toPnt.second == row) {
+        std::cerr << "T";
+      } else if (v == 0) {
         std::cerr << "#";
       } else if (v == 'x') {
         std::cerr << "x";
