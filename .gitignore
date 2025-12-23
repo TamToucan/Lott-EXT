@@ -2,3 +2,7 @@
 /.cursor/
 /.cache/
 /.vs/
+/deps/
+build_output*.txt
+cmake_log.txt
+
